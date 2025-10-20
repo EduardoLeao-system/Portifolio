@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 
 bootstrapApplication(AppComponent)
   .catch(err => console.error(err));
-  
+
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(CommonModule)
