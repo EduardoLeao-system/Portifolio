@@ -26,8 +26,8 @@
                class="mb-16 flex flex-col md:flex-row items-center animate-fade-in-up"
                [style.animation-delay]="(i * 0.1) + 's'">
 
-            <!-- Conteúdo esquerda (desktop) -->
-            <div class="md:w-1/2" [ngClass]="item.side === 'left' ? 'md:pr-12 md:text-right' : 'md:pr-12 md:order-3'">
+            <!-- Conteúdo esquerda -->
+            <div class="md:w-1/2 md:pr-12 md:text-right">
               <div *ngIf="item.side === 'left'"
                    class="bg-gradient-to-br backdrop-blur-lg p-8 rounded-2xl border hover:scale-105 transition-all duration-300 shadow-xl"
                    [ngClass]="getCardClasses(item.color)">
@@ -43,8 +43,8 @@
               <div class="w-4 h-4 bg-white rounded-full"></div>
             </div>
 
-            <!-- Conteúdo direita (desktop) -->
-            <div class="md:w-1/2" [ngClass]="item.side === 'right' ? 'md:pl-12' : 'md:pl-12 md:order-1'">
+            <!-- Conteúdo direita -->
+            <div class="md:w-1/2 md:pl-12">
               <div *ngIf="item.side === 'right'"
                    class="bg-gradient-to-br backdrop-blur-lg p-8 rounded-2xl border hover:scale-105 transition-all duration-300 shadow-xl"
                    [ngClass]="getCardClasses(item.color)">
