@@ -69,3 +69,37 @@ html {
     background-position: -200% 0;
   }
 }
+
+/* Efeito de Laterna */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(148, 163, 184, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(148, 163, 184, 0.8), 0 0 40px rgba(99, 102, 241, 0.3);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out 0.3s both;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Gradiente radial personalizado */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}

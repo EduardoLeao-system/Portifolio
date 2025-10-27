@@ -3,16 +3,25 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { CardsProjetosComponent } from './components/cards-projetos/cards-projetos.component';
 import { SobreComponent } from './components/sobre/sobre.component';
+import { HabilidadesComponent } from './components/habilidades/habilidades.component';
+import { LucideAngularModule, Linkedin, Github, CheckCircle, Mail, Phone } from 'lucide-angular';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, CardsProjetosComponent, SobreComponent],
+  imports: [CommonModule, HeaderComponent, CardsProjetosComponent, SobreComponent, HabilidadesComponent, LucideAngularModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  // Ícones Lucide
+  readonly LinkedinIcon = Linkedin;
+  readonly GithubIcon = Github;
+  readonly CheckCircleIcon = CheckCircle;
+  readonly MailIcon = Mail;
+  readonly PhoneIcon = Phone;
+
   projects = [
     {
       id: 1,
@@ -20,7 +29,7 @@ export class AppComponent {
       description: 'Portfólio full stack moderno com design responsivo e integração completa entre frontend e backend.',
       techStack: ['Angular', 'TypeScript', 'Spring Boot', 'Java', 'Tailwind CSS'],
       githubUrl: 'https://github.com/EduardoLeao-system/portifolio',
-      liveDemoUrl: 'https://eduardo-portfolio.vercel.app'
+      liveDemoUrl: ''
     },
     {
       id: 2,

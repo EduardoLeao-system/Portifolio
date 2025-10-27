@@ -1,6 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project } from '../../models/project.model';
+
+declare var lucide: any;
 
 @Component({
   selector: 'app-cards-projetos',
@@ -9,6 +11,12 @@ import { Project } from '../../models/project.model';
   templateUrl: './cards-projetos.component.html',
   styleUrls: ['./cards-projetos.component.css']
 })
-export class CardsProjetosComponent {
+export class CardsProjetosComponent implements AfterViewInit {
   @Input() project!: Project;
+
+  ngAfterViewInit() {
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  }
 }
