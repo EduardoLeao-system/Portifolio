@@ -9,12 +9,12 @@
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
-      <div *ngFor="let skill of skills" 
-           class="group flex flex-col items-center p-6 bg-gray-50 rounded-xl hover:bg-blue-50 hover:shadow-lg transition-all duration-300 cursor-pointer">
-        <div class="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-white shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300"
-             [ngStyle]="{'background-color': skill.color + '20', 'border': '2px solid ' + skill.color + '40'}">
-          <i [attr.data-lucide]="skill.icon" class="w-8 h-8" [ngStyle]="{'color': skill.color}"></i>
-        </div>
+      @for (skill of skills; track skill.name) {
+        <div class="group flex flex-col items-center p-6 bg-gray-50 rounded-xl hover:bg-blue-50 hover:shadow-lg transition-all duration-300 cursor-pointer">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-white shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300"
+               [ngStyle]="{'background-color': skill.color + '20', 'border': '2px solid ' + skill.color + '40'}">
+            <i [attr.data-lucide]="skill.icon" class="w-8 h-8" [ngStyle]="{'color': skill.color}"></i>
+          </div>
         
         
         <h3 class="text-lg font-semibold text-gray-800 mb-2 text-center">{{ skill.name }}</h3>
@@ -27,8 +27,9 @@
         </div>
         
         
-        <span class="text-sm text-gray-500 font-medium">{{ skill.level }}%</span>
-      </div>
+          <span class="text-sm text-gray-500 font-medium">{{ skill.level }}%</span>
+        </div>
+      }
     </div>
   </div>
 </section>
