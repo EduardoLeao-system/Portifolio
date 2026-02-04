@@ -99,7 +99,6 @@ html {
   animation: glow 3s ease-in-out infinite;
 }
 
-/* Gradiente radial personalizado */
 .bg-gradient-radial {
   background: radial-gradient(circle, var(--tw-gradient-stops));
 }

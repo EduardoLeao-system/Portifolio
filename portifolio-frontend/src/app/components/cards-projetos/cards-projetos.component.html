@@ -2,7 +2,7 @@
 
   <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
     <div class="text-white opacity-30">
-      <i data-lucide="code" class="w-16 h-16"></i>
+      <lucide-icon [name]="CodeIcon" class="w-16 h-16"></lucide-icon>
     </div>
   </div>
 
@@ -13,21 +13,21 @@
 
     <!-- Tech Stack -->
     <div class="mb-4">
-  <div class="flex flex-wrap gap-2">
-    @for (tech of project.techStack; track tech) {
-      <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium">
-        {{ tech }}
-      </span>
-    }
-  </div>
-</div>
+      <div class="flex flex-wrap gap-2">
+        @for (tech of project.techStack; track tech) {
+          <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium">
+            {{ tech }}
+          </span>
+        }
+      </div>
+    </div>
 
     <!-- Links -->
     <div class="flex space-x-4">
       <a [href]="project.githubUrl"
          target="_blank"
          class="flex items-center space-x-2 bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-300 font-medium">
-        <i data-lucide="github" class="w-5 h-5"></i>
+        <lucide-icon [name]="GithubIcon" class="w-5 h-5"></lucide-icon>
         <span>GitHub</span>
       </a>
 
@@ -35,9 +35,10 @@
         <a [href]="project.liveDemoUrl"
            target="_blank"
            class="flex items-center space-x-2 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300 font-medium">
-          <i data-lucide="external-link" class="w-5 h-5"></i>
+          <lucide-icon [name]="ExternalLinkIcon" class="w-5 h-5"></lucide-icon>
           <span>Ver Site</span>
         </a>
       }
+    </div>
   </div>
 </div>

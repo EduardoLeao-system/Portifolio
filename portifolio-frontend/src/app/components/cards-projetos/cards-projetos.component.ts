@@ -1,22 +1,19 @@
-import { Component, Input, AfterViewInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project } from '../../models/project.model';
-
-declare var lucide: any;
+import { LucideAngularModule, Code, Github, ExternalLink } from 'lucide-angular';
 
 @Component({
   selector: 'app-cards-projetos',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LucideAngularModule],
   templateUrl: './cards-projetos.component.html',
   styleUrls: ['./cards-projetos.component.css']
 })
-export class CardsProjetosComponent implements AfterViewInit {
+export class CardsProjetosComponent {
   @Input() project!: Project;
 
-  ngAfterViewInit() {
-    if (typeof lucide !== 'undefined') {
-      lucide.createIcons();
-    }
-  }
+  readonly CodeIcon = Code;
+  readonly GithubIcon = Github;
+  readonly ExternalLinkIcon = ExternalLink;
 }

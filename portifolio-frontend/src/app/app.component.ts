@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { CardsProjetosComponent } from './components/cards-projetos/cards-projetos.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
 import { LucideAngularModule, Linkedin, Github, CheckCircle, Mail, Phone } from 'lucide-angular';
+import { Project } from './models/project.model';
+import { ProjectService } from './services/project.service';
 
 
 @Component({
@@ -14,7 +16,7 @@ import { LucideAngularModule, Linkedin, Github, CheckCircle, Mail, Phone } from 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   // Ícones Lucide
   readonly LinkedinIcon = Linkedin;
   readonly GithubIcon = Github;
@@ -22,30 +24,13 @@ export class AppComponent {
   readonly MailIcon = Mail;
   readonly PhoneIcon = Phone;
 
-  projects = [
-    {
-      id: 1,
-      title: 'Portfolio Angular + Spring Boot',
-      description: 'Portfólio full stack moderno com design responsivo e integração completa entre frontend e backend.',
-      techStack: ['Angular', 'TypeScript', 'Spring Boot', 'Java', 'Tailwind CSS'],
-      githubUrl: 'https://github.com/EduardoLeao-system/portifolio',
-      liveDemoUrl: ''
-    },
-    {
-      id: 2,
-      title: 'Sistema de Gerenciamento',
-      description: 'Sistema completo para gerenciamento de usuários com autenticação JWT e dashboard administrativo.',
-      techStack: ['Angular', 'Spring Security', 'MySQL', 'Bootstrap'],
-      githubUrl: 'https://github.com/EduardoLeao-system/management-system',
-      liveDemoUrl: ''
-    },
-    {
-      id: 3,
-      title: 'E-commerce API',
-      description: 'API RESTful para e-commerce com carrinho de compras, pagamentos e gestão de produtos.',
-      techStack: ['Spring Boot', 'JPA', 'PostgreSQL', 'Docker'],
-      githubUrl: 'https://github.com/EduardoLeao-system/ecommerce-api',
-      liveDemoUrl: ''
-    }
-  ];
+  projects: Project[] = [];
+
+  constructor(private projectService: ProjectService) {}
+
+  ngOnInit(): void {
+    this.projectService.getProjects().subscribe(data => {
+      this.projects = data;
+    });
+  }
 }
