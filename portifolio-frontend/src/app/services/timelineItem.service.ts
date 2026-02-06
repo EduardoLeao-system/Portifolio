@@ -6,7 +6,7 @@ export class TimelineItemService {
   getTimelineItems(): TimelineItem[] {
     return [
       {
-        year: '2019',
+        year: '202',
         title: 'Primeiros Passos',
         description: 'Descobri minha paixão pela programação. Comecei com HTML, CSS e JavaScript, criando meus primeiros projetos web.',
         side: 'left',
